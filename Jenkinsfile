@@ -9,25 +9,26 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Chandu-0000/cdd_project.git'
+                git 'https://github.com/Chandu-0000/cdd_project.git'
             }
         }
 
         stage('Terraform Init') {
-    steps {
-        sh 'terraform init'
-    }
-}
-stage('Terraform Plan') {
-    steps {
-        sh 'terraform plan'
-    }
-}
-stage('Terraform Apply') {
-    steps {
-        sh 'terraform apply -auto-approve'
-    }
-}
+            steps {
+                bat 'terraform init'
+            }
+        }
 
+        stage('Terraform Plan') {
+            steps {
+                bat 'terraform plan'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                bat 'terraform apply -auto-approve'
+            }
+        }
     }
 }
