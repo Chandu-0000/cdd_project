@@ -6,10 +6,10 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
     }
 
-    stages {
+   stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Chandu-0000/cdd_project.git'
+                git branch: 'main', url: 'https://github.com/Chandu-0000/cdd_project.git'
             }
         }
 
