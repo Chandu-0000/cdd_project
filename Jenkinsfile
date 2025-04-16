@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Chandu-0000/cdd_project.git'
+                git branch: 'main', url: 'https://github.com/Chandu-0000/cdd_project.git'
             }
         }
 
@@ -32,6 +32,3 @@ pipeline {
         }
     }
 }
-
-aws-access-key-id
-aws-secret-access-key
